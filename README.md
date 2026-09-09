@@ -15,7 +15,3 @@ The full workflow runs 41 upstream stages with 20,000 Monte Carlo draws per duty
 Decision provenance includes 994 composition-duty outcomes, 216 engineering criterion assessments, 216 score-interval records and experimental-condition links. All 720,000 primary utility values are reconstructed. The evidence indices are declared assessment assumptions, not measured corrosion rates, lifetimes or failure probabilities. Formal qualification gates remain separate from continuous ranking.
 
 An independent Solar Salt calorimetry source is compared with the unchanged property model over 250–400 °C. Model and observed enthalpy increments are 232.50 and 223.85 kJ kg⁻¹, respectively, giving +3.86% energy error and −3.72% fixed-energy mass error. The nine supported measurements yield 36 dependent interval diagnostics, all retained. Its scope is the specific-energy estimate and material-mass consequence for Solar Salt over the tested interval. The three-chloride masking calculation is retrospective. The 162 chronological cases test numerical consistency within the stated lossless, constant-power model.
-
-## Archive identity
-
-This prepared release does not yet have a new version DOI. https://doi.org/10.5281/zenodo.22661577 identifies the previous baseline; https://doi.org/10.5281/zenodo.21616916 identifies the version-history concept. After deposition, cite the exact version DOI whose files match this release. Original sources retain their licences and attribution requirements.
