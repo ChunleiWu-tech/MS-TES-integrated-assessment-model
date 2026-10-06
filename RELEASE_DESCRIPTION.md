@@ -1,7 +1,7 @@
-# MS-TES integrated assessment model
+# TES-EES-SCIENTIFIC-V5-PRESENTATION-V9-20261006
 
-TES-EES-V2.2.0-20260909 provides the analysis and post-processing workflows for composition-specific molten-salt selection and application-constrained storage design.
+The upstream and postprocessing source archives correspond to the 6 October 2026 V9 integrated delivery. The scientific model remains V5, evaluated on 4 October 2026. Presentation V9 aligns the physical widths, panel sizes, typography and legend placement of Figures 6–8.
 
-The model connects complete-duty property evidence, criterion-level engineering qualification, uncertainty-aware selection, nanoparticle and scaffold evidence, directional mean-power comparisons, capacity-constrained chronology and equal-duty pumping. The independent Solar Salt calorimetry comparison retains the previously fixed heat-capacity model and tests energy estimates over the measured 250–400 °C interval. Source provenance, experimental conditions, utility normalization and score assumptions are explicit.
+The scientific source includes positive monotone density inference, fixed fitting/calibration groups at two nominal interval levels, allocation sensitivity, common-criterion certificate planning, ordinal-cost sensitivity, hypothetical observation-error stress and separate charging/release response transfer. Existing data and published measurements support the analyses. Generated scenarios, negative comparisons and unsupported predictions remain explicitly identified.
 
-The source archives contain registered inputs, provenance, pinned environment specifications and validation routines. They regenerate six main figures and seventeen supplementary figures as vector PDFs and 600 dpi PNGs, with machine-readable source tables. Generated results and virtual environments are reconstructed locally. SHA-256 manifests identify the files. Earlier published versions remain in the archive history; cite the version used for reproduction.
+This publication distributes the two code archives with their hashes and usage instructions. Additional integrated companions are required for all publication figures, as described in README.md. Current submission manuscripts are distributed separately. The historical September source release remains in the archive directory. No V9-specific DOI is assigned here.

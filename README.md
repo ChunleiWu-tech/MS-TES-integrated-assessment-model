@@ -1,17 +1,55 @@
 # MS-TES integrated assessment model
 
-TES-EES-V2.2.0-20260909
+Current source release: **TES-EES-SCIENTIFIC-V5-PRESENTATION-V9-20261006**.
+Scientific model V5 was evaluated on 4 October 2026; presentation V9 updates Figures 6–8 on 6 October 2026. The two source archives below are byte-identical to those in the verified local V9 integrated delivery.
 
-Composition-specific, complete-duty evidence determines which molten salts can be compared. Charge, delivery, capacity and pumping constraints determine whether material enhancement changes the storage requirement. Nanoparticle fluids and stationary scaffold composites retain their distinct evidence and operating domains.
+The analysis connects exact-composition evidence and complete operating windows to engineering qualification, system constraints and cost constrained measurement planning. The current development uses existing data and published measurements.
 
-## Reproduce the analysis
+## Download the current sources
 
-Extract both source ZIPs into one directory. Keep upstream_reproducible_code and postprocess_reproducible_code as siblings, with RUN_ALL.ps1 and RECOMPUTE_NUMERICAL_AUDIT.py beside them. Install 64-bit Python 3.12 and a licensed local Arial font. Run `powershell -File .\RUN_ALL.ps1`. The first run installs pinned dependencies. Later runs may use `-SkipSetup`. If script policy blocks this command, use the documented Python entry points or an approved local execution procedure.
+| Component | Archive | Contents |
+| --- | --- | --- |
+| Upstream | [TES_MT_upstream_source_only.zip](TES_MT_upstream_source_only.zip) | Model code, configuration, curated inputs, source records and pinned dependencies |
+| Postprocessing | [TES_MT_postprocess_source_only.zip](TES_MT_postprocess_source_only.zip) | Figure code, configuration, input records and pinned dependencies |
 
-The full workflow runs 41 upstream stages with 20,000 Monte Carlo draws per duty, 11 post-processing stages and an additional numerical audit. It reconstructs six main figures and seventeen supplementary figures as vector PDFs and 600 dpi PNGs. Generated outputs are replaced on rerun; do not store personal files in output folders. Source archives exclude virtual environments, generated results and proprietary fonts.
+Verify the downloads with `python VERIFY_SOURCES.py`. Exact archive hashes are in [SHA256SUMS.txt](SHA256SUMS.txt). Extract both archives into one directory, keeping `upstream_reproducible_code` and `postprocess_reproducible_code` as siblings:
 
-## Evidence and validation
+```text
+python -m zipfile -e TES_MT_upstream_source_only.zip .
+python -m zipfile -e TES_MT_postprocess_source_only.zip .
+```
 
-Decision provenance includes 994 composition-duty outcomes, 216 engineering criterion assessments, 216 score-interval records and experimental-condition links. All 720,000 primary utility values are reconstructed. The evidence indices are declared assessment assumptions, not measured corrosion rates, lifetimes or failure probabilities. Formal qualification gates remain separate from continuous ranking.
+## Reproduce the calculations
 
-An independent Solar Salt calorimetry source is compared with the unchanged property model over 250–400 °C. Model and observed enthalpy increments are 232.50 and 223.85 kJ kg⁻¹, respectively, giving +3.86% energy error and −3.72% fixed-energy mass error. The nine supported measurements yield 36 dependent interval diagnostics, all retained. Its scope is the specific-energy estimate and material-mass consequence for Solar Salt over the tested interval. The three-chloride masking calculation is retrospective. The 162 chronological cases test numerical consistency within the stated lossless, constant-power model.
+Use 64-bit Python 3.12 and the pinned upstream dependencies, which also include the postprocessing requirements. In a Python virtual environment:
+
+```text
+python -m pip install -r upstream_reproducible_code/requirements-lock.txt
+python upstream_reproducible_code/src/run_pipeline.py --mode full
+```
+
+The full upstream entry point contains 51 stages and uses 20,000 Monte Carlo worlds per duty. Generated outputs and environments are excluded from these source archives.
+
+## Reproduce the publication figures
+
+The postprocessing entry point has 16 stages. Its publication-figure stage also requires the sibling `EES_Submission_Package/Analysis_Scripts` directory and the `Active_Learning_Upgrade` companion, including their supporting data. These companions are supplied in the integrated submission delivery; the two source-only downloads do not contain all inputs for rebuilding all publication figures. The final presentation contains eight main and 31 supplementary figures.
+
+With these integrated companions available, run:
+
+```text
+python postprocess_reproducible_code/src/run_pipeline.py --upstream-root ../upstream_reproducible_code
+```
+
+The recorded figure configuration uses a locally installed Arial font. Proprietary font files are not distributed. Preserve the extracted folder structure when using the integrated delivery.
+
+## Scientific scope
+
+The upstream extension includes positive nonincreasing density inference, identical fitting and calibration groups at nominal 90% and 95%, five source-allocation sensitivities, 72 policy comparisons under a common worst-case criterion, 1,026 ordinal-cost settings and hypothetical observation-error stress. Charging and release transfer are assessed separately using published device endpoints.
+
+Density error improves in two of five allocations and worsens in three. Physically admissible predictions and source coverage are assessed separately from precision. Correlation-generated targets are identified as generated values. Exact robust policies outperform the exact point-policy worst-case value in five of 72 small instances; generated-process comparisons retain settings where robust planning performs worse. The device endpoints are dependent observations from two same-group publications. Predicted properties and generated certificate outcomes do not establish measured engineering qualification.
+
+## Version and citation
+
+Use [CITATION.cff](CITATION.cff) and report the release identifier and Git commit used. No release-specific DOI has been assigned to this V9 source publication. The [existing Zenodo record](https://doi.org/10.5281/zenodo.22673249) provides reference data and an earlier model; it is not presented as the archive of this V9 release. Third-party inputs retain their source-specific licences.
+
+The previous source publication and its original instructions are preserved in [archive/TES-EES-V2.2.0-20260909](archive/TES-EES-V2.2.0-20260909). Use the current archives above for the V9 integrated delivery.

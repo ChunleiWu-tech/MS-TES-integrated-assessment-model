@@ -1,0 +1,27 @@
+{
+  "release_id": "TES-EES-SCIENTIFIC-V5-PRESENTATION-V9-20261006",
+  "date": "2026-10-06",
+  "repository": "https://github.com/ChunleiWu-tech/MS-TES-integrated-assessment-model",
+  "integrated_delivery": "TES_Submission_Final_20261006_V9",
+  "scientific_model": "TES-EES-SCIENTIFIC-V5-20261004",
+  "presentation": "V9",
+  "components": [
+    {
+      "name": "TES_MT_upstream_source_only.zip",
+      "sha256": "4af4b6a914d70ba7f39c1fdb7dd90f93da1de64faee28a9157f3f42bd76c0f35",
+      "bytes": 5442386,
+      "files": 140,
+      "crc": "PASS",
+      "python_sources_parsed": 72
+    },
+    {
+      "name": "TES_MT_postprocess_source_only.zip",
+      "sha256": "19df4fe60ee3b540edbc0b06aedf7342f6d210590d632a82229df431c8748b24",
+      "bytes": 324891,
+      "files": 84,
+      "crc": "PASS",
+      "python_sources_parsed": 27
+    }
+  ],
+  "publication_figures_require_integrated_companions": true
+}

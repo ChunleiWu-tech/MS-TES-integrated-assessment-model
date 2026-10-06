@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the exact Zenodo version used for your computation."
+title: "MS-TES integrated assessment model for molten salt selection and application-constrained storage design"
+type: software
+version: "TES-EES-V2.2.0-20260909"
+authors:
+  - family-names: Wu
+    given-names: Chunlei
+  - family-names: Wang
+    given-names: Xiang
+  - family-names: Wang
+    given-names: Xinmin
+  - family-names: Sun
+    given-names: Shipeng
+repository-code: "https://github.com/ChunleiWu-tech/MS-TES"
+url: "https://github.com/ChunleiWu-tech/MS-TES"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21616916"
+    description: "All-version concept DOI; not the DOI of this exact release."
